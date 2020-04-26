@@ -1,2 +1,5 @@
 *.csv
 *.wal
+*.zip
+*.data
+*.test
