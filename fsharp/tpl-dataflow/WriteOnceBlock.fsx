@@ -1,6 +1,4 @@
-#r "System.Threading.Tasks"
-#r "System.Threading.Tasks.Dataflow"
-#r "System.Runtime"
+#r "nuget: Microsoft.Tpl.Dataflow"
 open System
 open System.Threading
 open System.Threading.Tasks
