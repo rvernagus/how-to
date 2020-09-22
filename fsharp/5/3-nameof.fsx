@@ -13,6 +13,8 @@ let reflectOnPerson p prop =
     match prop with
     | nameof p.Name -> p.Name
     | nameof p.Age  -> string p.Age
+    | _             -> failwith $"{prop} is not valid"
 
 printfn $"""{reflectOnPerson {Name="Ray"; Age=47} "Name"}"""
 printfn $"""{reflectOnPerson {Name="Ray"; Age=47} "Age" }"""
+printfn $"""{reflectOnPerson {Name="Ray"; Age=47} "Address"}"""
