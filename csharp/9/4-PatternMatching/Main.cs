@@ -6,11 +6,11 @@ static decimal CalculateToll(object vehicle) =>
         Car             => 2.00m, // Simple type patterns
         Taxi            => 3.50m,
         Bus             => 5.00m,
-        DeliveryTruck t => t.GrossWeightClass switch
+        DeliveryTruck t => t.GrossWeightClass switch // This switch demonstrates Relational Patterns
         {
-            > 5000      => 10.00m + 5.00m,
-            < 3000      => 10.00m - 2.00m,
-            _           => 10.00m,
+            < 3000 => 10.00m - 2.00m,
+            >= 3000 and <= 5000 => 10.00m, // Logical patterns using and, or, not
+            > 5000 => 10.00m + 5.00m,
         },
         null            => throw new ArgumentNullException(nameof(vehicle)),
         _               => throw new ArgumentException("Not a known vehicle type", nameof(vehicle))
